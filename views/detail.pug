@@ -1,0 +1,22 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let garrettCarsid = toShow._id 
+  - let carName = toShow.carName
+  - let carModel = toShow.carModel 
+  - let cost = toShow.cost 
+  div 
+    div.row 
+      div(class='garrettCarsAttr mr-3') garrettCars ID is: 
+      div #{garrettCarsid} 
+    div.row 
+      div(class='garrettCarsAttr mr-3') car Name is: 
+      div #{carName} 
+    div.row 
+      div(class='garrettCarsAttr mr-3') car Model is: 
+      div #{carModel} 
+    div.row 
+      div(class='garrettCarsAttr mr-3') Cost is: 
+      div #{cost} 

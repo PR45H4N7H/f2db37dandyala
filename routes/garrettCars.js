@@ -2,6 +2,16 @@ var express = require('express');
 const garrettCars_controlers= require('../controllers/garrettCars'); 
  //const garrettCars_controller=require('../controllers/garrettCars');
 var router = express.Router(); 
+// A little function to check if we have an authorized user and continue on 
+ 
+// redirect to login. 
+const secured = (req, res, next) => { 
+    if (req.user){ 
+      return next(); 
+    } 
+    req.session.returnTo = req.originalUrl; 
+    res.redirect("/login"); 
+  } 
 
  
 /* GET garrettCarss */ 
@@ -23,6 +33,6 @@ router.get('/create', function(req, res) {
     } 
 }); 
 /* GET create update page */ 
-router.get('/update', garrettCars_controlers.garrettCars_update_Page);
+router.get('/update',secured, garrettCars_controlers.garrettCars_update_Page);
 router.get('/delete', garrettCars_controlers.garrettCars_delete_Page); 
 module.exports = router; 

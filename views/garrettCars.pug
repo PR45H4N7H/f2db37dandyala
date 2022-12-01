@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  h1 Search results cars  
+  h1 Search results cars   
+  button.btn( class="btn-success ml-1", onclick= destination3) create 
   -  var results = results
   block content 
   h1= title 
@@ -10,8 +11,12 @@ block content
     div(class="row m-1") 
       each item in items  
        - let destination = `dispatch(\"/garrettcars/update/?id=${item._id}\")` 
+       - let destination2 = `dispatch(\"/garrettcars/detail/?id=${item._id}\")`         
+       - let destination3 = `dispatch(\"/garrettcars/delete/?id=${item._id}\")`  
         div(class="row-sm-2", class="m-1") car Name is #{item.carName} #{item.carModel} and its cost is #{item.cost} 
          button.btn( class="btn-primary ml-1", onclick= destination) Update 
+         button.btn( class="btn-secondary ml-1", onclick= destination2) Detail 
+         button.btn( class="btn-danger ml-1", onclick= destination3) Delete 
   script. 
     function dispatch(path){ 
       window.location.href=path 

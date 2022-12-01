@@ -24,7 +24,7 @@ block content
         input#carModel(type='text', name='carModel', value= carModel ) 
     div.form-group 
         label.garrettCarsAttr(for='cost') Cost 
-        input#cost(type='number', name='cost', value=cost ) 
+        input#cost(type='number', name='cost', value=cost,min=10000,max=100000 ) 
     input(type="submit") 
  
   script. 

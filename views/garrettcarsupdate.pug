@@ -18,13 +18,13 @@ block content
    form(id='form', action= actionid, method="PUT") 
     div.form-group 
         label.garrettCarsAttr(for='carName') Car Name
-        input#carName(type='text', name='carName', value= carName ) 
+        input#carName(type='text', name='carName', value= carName,required ) 
     div.form-group 
         label.garrettCarsAttr(for='carModel') Car Model
-        input#carModel(type='text', name='carModel', value= carModel ) 
+        input#carModel(type='text', name='carModel', value= carModel, required ) 
     div.form-group 
         label.garrettCarsAttr(for='cost') Cost 
-        input#cost(type='number', name='cost', value=cost,min=10000,max=100000 ) 
+        input#cost(type='number', name='cost', value=cost ) 
     input(type="submit") 
  
   script. 
